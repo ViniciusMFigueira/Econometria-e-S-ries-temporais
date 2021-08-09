@@ -38,3 +38,4 @@ ts.plot(ar02)
 # gráfico MA(1)
 ts.plot(ma01) 
 
+http://127.0.0.1:33381/graphics/2ce16a9d-aeb4-46f9-99f6-e1c6346a4f67.png
