@@ -1,0 +1,40 @@
+# Criando modelos para sérires temporais com dados artificiais.
+
+#numero de observações n = 500
+n1 <- 500
+
+#criando ruído branco
+wn <- rnorm(n1,0,1)
+
+# série AR(1)
+ar01 <- replicate(n1,0)
+
+#  série AR(2)
+ar02 <- replicate(n1,0)
+
+# serie MA(1)
+ma01 <- replicate(n1,0)
+
+# loop para gerar séries - inicio
+for(k in 2:n1) 
+
+{ ar01[k] = 0.7*ar01[k-1] + wn[k]
+ar02[k] = 0.4*ar01[k-1] + wn[k] 
+ma01[k] = wn[k] + 0.5*wn[k-1] } 
+# final do loop
+
+# divide o gráfico
+par(mfrow = c(2, 2)) 
+
+# gráfico wn
+ts.plot(wn)
+
+# gráfico AR(1)
+ts.plot(ar01)
+
+# gráfico AR(2)
+ts.plot(ar02) 
+
+# gráfico MA(1)
+ts.plot(ma01) 
+
